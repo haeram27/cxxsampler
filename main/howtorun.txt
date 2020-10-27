@@ -1,0 +1,11 @@
+<compile and run>
+main$ make gtest.run <TestSuitName>.<TestName>
+main$ make gtest.run VanilaTest.test1
+main$ make gtest.run "VanilaTest.*"
+main$ make gtest.run VanilaTest.\*
+main$ ./makeg VanilaTest.test1
+main$ ./makeg "VanilaTest.*"
+main$ ./makeg VanilaTest.\*
+
+<clean>
+main$ make clean
