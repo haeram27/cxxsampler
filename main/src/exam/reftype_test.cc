@@ -64,10 +64,13 @@ TEST_F(Reftypetest, test)
     std::clog << i << std::endl;
     std::clog << &i << std::endl;
 
+    // int& lv = 1; //Error: non-const lvaule reference can NOT bind on rvalue;
+    const int& conlv = 1; //OK: const lvaule reference can bind on rvalue;
     int& lv = i;
     std::clog << lv << std::endl;
     std::clog << &lv << std::endl;
 
+    // int&& rv = i; //Error: rvaule reference can NOT bind on lvalue;
     int&& rv = 2;
     std::clog << rv << std::endl;
     std::clog << &rv << std::endl;
