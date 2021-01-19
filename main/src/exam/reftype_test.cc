@@ -60,29 +60,29 @@ protected:
 TEST_F(Reftypetest, test)
 {STARTTIME
 
-    int i = 1;
-    std::clog << i << std::endl;
-    std::clog << &i << std::endl;
+    int&& rv_rhs = 1;
+    int&& rv_lhs = 2;
+    int i = rv_rhs;
+    int* p = &rv_rhs;
+    int& lv_rhs = *p;
+    int& lv_lhs = rv_lhs;
 
-    // int& lv = 1; //Error: non-const lvaule reference can NOT bind on rvalue;
-    const int& conlv = 1; //OK: const lvaule reference can bind on rvalue;
-    int& lv = i;
-    std::clog << lv << std::endl;
-    std::clog << &lv << std::endl;
+    std::clog << ">>>> normal variable <<<<" << std::endl;
 
-    // int&& rv = i; //Error: rvaule reference can NOT bind on lvalue;
-    int&& rv = 2;
-    std::clog << rv << std::endl;
-    std::clog << &rv << std::endl;
+    std::clog << ">>>> lvalue reference <<<<" << std::endl;
 
-    int* rp = &rv;
-    std::clog << rp << std::endl;
-    std::clog << *rp << std::endl;
+    std::clog << ">>>> rvalue reference <<<<" << std::endl;
 
-    int* p = &i;
-    std::clog << *p << std::endl;
-    std::clog << p << std::endl;
-    std::clog << &p << std::endl;
+    std::clog << rv_rhs << std::endl;
+    std::clog << &rv_rhs << std::endl;
+    rv_lhs = rv_rhs;
+    std::clog << rv_lhs << std::endl;
+    std::clog << &rv_lhs << std::endl;
+
+    std::clog << ">>>> pointer <<<<" << std::endl;
+
+
+
 
 
 ENDTIME}
