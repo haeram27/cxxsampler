@@ -39,6 +39,10 @@ MAINDEPS = $(MAINOBJS:%o=%d)
 # EXTERNAL: 3rd party libraries
 ###########################
 #==========================
+# SPDLOG
+SPDLOGINC := -Iexternal/spdlog/1.8.2/include
+
+#==========================
 # GOOGLETEST
 GTEST := gtest
 GTESTINC := -Iexternal/googletest/include 
@@ -79,7 +83,7 @@ CPPDEFS += -DDEBUG
 endif
 #CPPFLAGS += $(addprefix -D,$(CPPDEFS))
 
-INCLUDES = $(SRCINC) $(JSONCPPINC) $(LIBXML2INC)
+INCLUDES = $(SRCINC) $(JSONCPPINC) $(LIBXML2INC) $(SPDLOGINC)
 #CPPFLAGS += $(addprefix -I,$(INCLUDES))
 
 LDFLAGS = -lstdc++ -lm $(JSONCPPLIB) $(LIBXML2LIB)
