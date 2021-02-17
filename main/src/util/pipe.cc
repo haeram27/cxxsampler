@@ -39,7 +39,7 @@ int main () {
     return 0;
 }
 */
-/* From: C++ 11 */
+/* Post-C++11 */
 std::string pexec(const char* cmd) {
     std::array<char, 256> buffer;
     std::string result;
