@@ -2,7 +2,7 @@
 #include "util/logger.h"
 
 int main () {
-    util::logger::logger_init();
+    util::logger::init();
     SPDLOG_INFO("this is spdlog!");
     return 0;
 }
